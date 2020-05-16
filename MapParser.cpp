@@ -1,4 +1,5 @@
 #include "MapParser.h"
+#include <string>
 
 MapParser::MapParser(std::string file, CharBlockingQueue* madera, 
 		CharBlockingQueue* trigo, CharBlockingQueue* minerales) {

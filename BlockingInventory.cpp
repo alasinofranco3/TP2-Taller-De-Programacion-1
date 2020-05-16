@@ -47,7 +47,6 @@ int BlockingInventory::take(std::map<std::string, int> *neededResources) {
 
 
 void BlockingInventory::shouldClose() {
-	
 	bool b = true;
 	unsigned int i = 0;
 
@@ -60,7 +59,7 @@ void BlockingInventory::shouldClose() {
   		this->close();	
  	}
 	notEmpty.notify_all();		
- 	
+
  	/*
  	if (gatherers == 0) {
  		this->close();
@@ -81,10 +80,10 @@ void BlockingInventory::add(const std::string resource) {
 
 void BlockingInventory::print() {
 	std::cout << "Recursos restantes:" << std::endl;
-	std::cout << "  -Trigo: " << inventory.at("Trigo") << std::endl;
-	std::cout << "  -Madera: " << inventory.at("Madera") << std::endl;
-	std::cout << "  -Carbon: " << inventory.at("Carbon") << std::endl;
-	std::cout << "  -Hierro: " << inventory.at("Hierro") << std::endl;
+	std::cout << "  - Trigo: " << inventory.at("Trigo") << std::endl;
+	std::cout << "  - Madera: " << inventory.at("Madera") << std::endl;
+	std::cout << "  - Carbon: " << inventory.at("Carbon") << std::endl;
+	std::cout << "  - Hierro: " << inventory.at("Hierro") << std::endl;
 	std::cout << std::endl;
 }
 
