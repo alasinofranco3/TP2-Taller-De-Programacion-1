@@ -3,7 +3,7 @@
 Minero::Minero(CharBlockingQueue* q, 
 	BlockingInventory* i) : Recolector(q, i) {}
 
-int Minero::work() {
+int Minero::run() {
 	char result = 0;
 	while (result != CLOSED) {	
 		result = queue->pop();

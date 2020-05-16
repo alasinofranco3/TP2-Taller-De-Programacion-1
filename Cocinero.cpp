@@ -6,9 +6,10 @@ Cocinero::Cocinero(ProtectedCounter* p,
 	neededResources["Carbon"] = 1;
 }
 
-int Cocinero::work() {
+int Cocinero::run() {
 	int result = 0;
 	while (result != CLOSED) {
+		//inventory->shouldClose();
 		result = inventory->take(&neededResources);
 		if (result == CLOSED) {
 			return CLOSED;
@@ -16,8 +17,6 @@ int Cocinero::work() {
 			//ver que hacer
 		}
 		usleep(60000);
-		//std::cout << "Cocinero suma 5" << std::endl;
-
 		points->add(5);
 	}	
 	return 0;

@@ -3,12 +3,10 @@
 Leniador::Leniador(CharBlockingQueue* q, 
 	BlockingInventory* i) : Recolector(q, i) {}
 
-int Leniador::work() {
+int Leniador::run() {
 	char result = 0;
 	while (result != CLOSED) {
-		//std::cout << "Tamanio cola de madera: " << queue->size() << std::endl;	
 		result = queue->pop();
-		//std::cout << "Leniador obtiene de la cola: " << result << std::endl;
 		if (result == CLOSED) {
 			finished = true;
 			//inventory->destroyGatherer();

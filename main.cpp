@@ -15,7 +15,6 @@ int main(int argc, char const *argv[]) {
 		return ERROR;
 	}
 
-	//std::cout << "Comienza a parsearse el mapa"<< std::endl;
 	if (mParser.parse() == ERROR) {
 		return ERROR;
 	}

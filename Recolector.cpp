@@ -11,9 +11,9 @@ Recolector::Recolector(CharBlockingQueue* q, BlockingInventory* i) {
 const bool* Recolector::getState() const{
 	return &finished;
 }
-
+/*
 void Recolector::run() {
 	this->work();
 }
-
+*/
 Recolector::~Recolector() {}

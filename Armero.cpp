@@ -5,9 +5,10 @@ Armero::Armero(ProtectedCounter* p, BlockingInventory* i) : Productor(p, i) {
 	neededResources["Hierro"] = 2;
 }
 
-int Armero::work() {
+int Armero::run() {
 	int result = 0;
 	while (result != CLOSED) {
+		//inventory->shouldClose();
 		result = inventory->take(&neededResources);
 		if (result == CLOSED) {
 			return CLOSED;
@@ -16,8 +17,6 @@ int Armero::work() {
 		}
 		
 		usleep(60000);
-		std::cout << "";
-
 		points->add(3);
 	}
 	return 0;

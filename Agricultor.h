@@ -8,7 +8,7 @@ class Agricultor : public Recolector {
 	public:
 		Agricultor();
 		Agricultor(CharBlockingQueue* q, BlockingInventory* i);
-		virtual int work() override;
+		virtual int run() override;
 		~Agricultor();
 };
 

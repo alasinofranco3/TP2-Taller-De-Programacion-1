@@ -14,7 +14,7 @@ class Thread {
         Thread(Thread&& other);
 		void start();
 		void join();
-		virtual void run() = 0;
+		virtual int run() = 0;
 		virtual ~Thread();
 
 		//Inhabilita las copias

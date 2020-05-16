@@ -8,7 +8,7 @@ class Leniador : public Recolector {
 	public:
 		Leniador();
 		Leniador(CharBlockingQueue* q, BlockingInventory* i);
-		virtual int work() override;
+		virtual int run() override;
 		~Leniador();
 };
 #endif

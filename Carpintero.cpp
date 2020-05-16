@@ -6,9 +6,10 @@ Carpintero::Carpintero(ProtectedCounter* p,
 	neededResources["Hierro"] = 1;
 }
 
-int Carpintero::work() {
+int Carpintero::run() {
 	int result = 0;
 	while (result != CLOSED) {
+		//inventory->shouldClose();
 		result = inventory->take(&neededResources);
 		if (result == CLOSED) {
 			return CLOSED;
@@ -17,7 +18,6 @@ int Carpintero::work() {
 		}
 		
 		usleep(60000);
-		//std::cout << "Carpintero suma 2" << std::endl;
 		points->add(2);
 	}
 	return 0;

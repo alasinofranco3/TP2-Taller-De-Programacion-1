@@ -8,7 +8,7 @@ class Armero : public Productor {
 	public:
 		Armero();
 		Armero(ProtectedCounter* p, BlockingInventory* i);
-		virtual int work() override;
+		virtual int run() override;
 		~Armero();	
 };
 

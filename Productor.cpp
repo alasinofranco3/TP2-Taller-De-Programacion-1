@@ -7,9 +7,9 @@ Productor::Productor(ProtectedCounter* p, BlockingInventory* i) {
 	inventory = i;
 }
 
-
+/*
 void Productor::run() {
 	this->work();
 }
-
+*/
 Productor::~Productor() {}

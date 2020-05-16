@@ -8,7 +8,7 @@ class Carpintero : public Productor {
 	public:
 		Carpintero();
 		Carpintero(ProtectedCounter* p, BlockingInventory* i);
-		virtual int work() override;
+		virtual int run() override;
 		~Carpintero();
 };
 

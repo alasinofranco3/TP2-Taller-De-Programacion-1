@@ -29,7 +29,7 @@ int BlockingInventory::take(std::map<std::string, int> *neededResources) {
 
 	while (this->has(neededResources) == false) {
 		this->shouldClose();
-		if (isClosed) {
+		if (isClosed) {	
 			return CLOSED;
 		}
 
@@ -45,7 +45,9 @@ int BlockingInventory::take(std::map<std::string, int> *neededResources) {
 	return 0;
 }
 
+
 void BlockingInventory::shouldClose() {
+	
 	bool b = true;
 	unsigned int i = 0;
 
@@ -55,8 +57,10 @@ void BlockingInventory::shouldClose() {
     }
 
   	if (b == true) {
-  		this->close();
+  		this->close();	
  	}
+	notEmpty.notify_all();		
+ 	
  	/*
  	if (gatherers == 0) {
  		this->close();
@@ -64,15 +68,15 @@ void BlockingInventory::shouldClose() {
  	*/
 }
 
+
+void BlockingInventory::close() {	
+	isClosed = true;
+}
+
 void BlockingInventory::add(const std::string resource) {
 	std::unique_lock<std::mutex> lk(mutex);	
 	inventory.at(resource) ++;
 	notEmpty.notify_all();
-}
-
-void BlockingInventory::close() {	
-	isClosed = true;
-	notEmpty.notify_all();		
 }
 
 void BlockingInventory::print() {

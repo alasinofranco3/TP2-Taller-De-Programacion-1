@@ -13,8 +13,8 @@ class Recolector : public Thread {
 	public:
 		Recolector();
 		Recolector(CharBlockingQueue* q, BlockingInventory* i);
-		virtual void run() override;
-		virtual int work() = 0;
+		//virtual void run() override;
+		//virtual int work() = 0;
 		const bool* getState() const;
 		virtual ~Recolector();
 };

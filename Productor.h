@@ -15,8 +15,8 @@ class Productor : public Thread {
 	public:
 		Productor();
 		Productor(ProtectedCounter* p, BlockingInventory* i);
-		virtual void run() override;
-		virtual int work() = 0;
+		//virtual void run() override;
+		//virtual int work() = 0;
 		virtual ~Productor();	
 };
 

@@ -8,7 +8,7 @@ class Minero : public Recolector {
 	public:
 		Minero();
 		Minero(CharBlockingQueue* q, BlockingInventory* i);
-		virtual int work() override;
+		virtual int run() override;
 		~Minero();	
 };
 #endif

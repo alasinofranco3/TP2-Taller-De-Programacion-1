@@ -8,7 +8,7 @@ class Cocinero : public Productor {
 	public:
 		Cocinero();
 		Cocinero(ProtectedCounter* p, BlockingInventory* i);
-		virtual int work() override;
+		virtual int run() override;
 		~Cocinero();
 };
 

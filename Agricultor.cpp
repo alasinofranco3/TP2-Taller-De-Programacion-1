@@ -3,7 +3,7 @@
 Agricultor::Agricultor(CharBlockingQueue* q, 
 	BlockingInventory* i) : Recolector(q, i) {}
 
-int Agricultor::work() {
+int Agricultor::run() {
 	char result = 0;
 	while (result != CLOSED) {
 		result = queue->pop();
