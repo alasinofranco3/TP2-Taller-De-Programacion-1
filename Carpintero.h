@@ -5,13 +5,11 @@
 
 class Carpintero : public Productor {
 	private:
-
 	public:
 		Carpintero();
 		Carpintero(ProtectedCounter* p, BlockingInventory* i);
 		virtual int work() override;
 		~Carpintero();
-	
 };
 
 #endif

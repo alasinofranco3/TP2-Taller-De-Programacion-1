@@ -4,6 +4,8 @@
 #include "BlockingInventory.h"
 #include "Thread.h"
 #include "ProtectedCounter.h"
+#include <string>
+#include <map>
 
 class Productor : public Thread {
 	protected:
@@ -15,8 +17,7 @@ class Productor : public Thread {
 		Productor(ProtectedCounter* p, BlockingInventory* i);
 		virtual void run() override;
 		virtual int work() = 0;
-		virtual ~Productor();
-	
+		virtual ~Productor();	
 };
 
 #endif

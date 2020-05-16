@@ -1,6 +1,7 @@
 #include "Cocinero.h"
 
-Cocinero::Cocinero(ProtectedCounter* p, BlockingInventory* i) : Productor(p, i) {
+Cocinero::Cocinero(ProtectedCounter* p, 
+	BlockingInventory* i) : Productor(p, i) {
 	neededResources["Trigo"] = 2;
 	neededResources["Carbon"] = 1;
 }
@@ -15,6 +16,8 @@ int Cocinero::work() {
 			//ver que hacer
 		}
 		usleep(60000);
+		//std::cout << "Cocinero suma 5" << std::endl;
+
 		points->add(5);
 	}	
 	return 0;

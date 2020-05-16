@@ -7,6 +7,7 @@
 #include <condition_variable>
 #include <vector>
 
+
 #define CLOSED 2
 
 
@@ -18,8 +19,8 @@ class BlockingInventory {
 		std::condition_variable notEmpty;
 		bool has(std::map<std::string, int> *resources) const;
 		
-		//std::vector<const bool*> gatherersStates;
-		int gatherers;
+		std::vector<const bool*> gatherersStates;
+		//int gatherers;
 	public:
 		BlockingInventory();
 		~BlockingInventory();
@@ -28,11 +29,10 @@ class BlockingInventory {
 		void close();
 		void print();
 
-		//void saveState(const bool* state);
-		void addGatherer();
-		void destroyGatherer();
+		void saveState(const bool* state);
+		//void addGatherer();
+		//void destroyGatherer();
 		void shouldClose();
-	
 };
 
 #endif

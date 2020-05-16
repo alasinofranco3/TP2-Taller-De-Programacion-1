@@ -1,4 +1,6 @@
 #include "BlockingInventory.h"
+#include <string>
+#include <map>
 
 BlockingInventory::BlockingInventory() {
 	isClosed = false;
@@ -6,7 +8,7 @@ BlockingInventory::BlockingInventory() {
 	inventory["Trigo"] = 0;
 	inventory["Carbon"] = 0;
 	inventory["Hierro"] = 0;
-	gatherers = 0;
+	//gatherers = 0;
 }
 
 bool BlockingInventory::has(std::map<std::string, int> *resources) const {
@@ -44,7 +46,6 @@ int BlockingInventory::take(std::map<std::string, int> *neededResources) {
 }
 
 void BlockingInventory::shouldClose() {
-	/*
 	bool b = true;
 	unsigned int i = 0;
 
@@ -55,10 +56,12 @@ void BlockingInventory::shouldClose() {
 
   	if (b == true) {
   		this->close();
- 	}*/
+ 	}
+ 	/*
  	if (gatherers == 0) {
  		this->close();
  	}
+ 	*/
 }
 
 void BlockingInventory::add(const std::string resource) {
@@ -80,14 +83,14 @@ void BlockingInventory::print() {
 	std::cout << "  -Hierro: " << inventory.at("Hierro") << std::endl;
 	std::cout << std::endl;
 }
-/*
+
 void BlockingInventory::saveState(const bool* state) {
-	bool* b = (bool*)malloc(sizeof(bool*));
-	*b = state;
+	//bool* b = (bool*)malloc(sizeof(bool*));
+	//*b = state;
 	gatherersStates.push_back(state);
 }
-*/
 
+/*
 void BlockingInventory::addGatherer() {
 	gatherers ++;
 }
@@ -95,5 +98,5 @@ void BlockingInventory::addGatherer() {
 void BlockingInventory::destroyGatherer() {
 	gatherers --;
 }
-
+*/
 BlockingInventory::~BlockingInventory() {}

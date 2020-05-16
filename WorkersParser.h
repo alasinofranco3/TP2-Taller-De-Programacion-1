@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <vector>
 #include "Thread.h"
 #include "Agricultor.h"
 #include "Leniador.h"
@@ -34,8 +36,7 @@ class WorkersParser {
 		ProtectedCounter* c, std::vector<Thread*> *threads);
 
 		int parse();
-		~WorkersParser();
-	
+		~WorkersParser();	
 };
 
 #endif

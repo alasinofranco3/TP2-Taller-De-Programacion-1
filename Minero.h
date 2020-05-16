@@ -5,13 +5,10 @@
 
 class Minero : public Recolector {
 	private:
-
 	public:
 		Minero();
 		Minero(CharBlockingQueue* q, BlockingInventory* i);
 		virtual int work() override;
-		~Minero();
-	
+		~Minero();	
 };
-
 #endif

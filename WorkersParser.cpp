@@ -1,4 +1,6 @@
 #include "WorkersParser.h"
+#include <vector>
+#include <string>
 
 WorkersParser::WorkersParser(std::string fileName, CharBlockingQueue* tri, 
 	CharBlockingQueue* mad, CharBlockingQueue* min, BlockingInventory* i, 
@@ -56,18 +58,18 @@ Thread* WorkersParser::createWorker(std::string type) {
 	Recolector* r;
 	if (type == "Agricultores") {
 		r = new Agricultor(trigo, inventory);
-		//inventory->saveState(r->getState());
-		inventory->addGatherer();
+		inventory->saveState(r->getState());
+		//inventory->addGatherer();
 		return r;  			
 	} else if (type == "Leniadores") {
 		r = new Leniador(madera, inventory);
-		//inventory->saveState(r->getState());
-		inventory->addGatherer();
+		inventory->saveState(r->getState());
+		//inventory->addGatherer();
 		return r;  	
 	} else if (type == "Mineros") {
 		r = new Minero(minerales, inventory);
-		//inventory->saveState(r->getState());
-		inventory->addGatherer();
+		inventory->saveState(r->getState());
+		//inventory->addGatherer();
 		return r;  
 	} else if (type == "Cocineros") {
 		return new Cocinero(counter, inventory);

@@ -1,5 +1,6 @@
 #include "WorkersParser.h"
 #include "MapParser.h"
+#include <vector>
 
 int main(int argc, char const *argv[]) {
 	CharBlockingQueue mad, min, tri;
@@ -14,6 +15,7 @@ int main(int argc, char const *argv[]) {
 		return ERROR;
 	}
 
+	//std::cout << "Comienza a parsearse el mapa"<< std::endl;
 	if (mParser.parse() == ERROR) {
 		return ERROR;
 	}

@@ -7,7 +7,9 @@ CharBlockingQueue::CharBlockingQueue() {
 char CharBlockingQueue::pop() {
 	std::unique_lock<std::mutex> lk(mutex);
 	while (queue.empty()) {
+		//std::cout << "cola esta vacia"<< std::endl;
 		if (isClosed) {
+			//std::cout << "cola cerrada"<< std::endl;
 			return CLOSED;
 		}
 

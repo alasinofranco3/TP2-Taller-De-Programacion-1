@@ -5,13 +5,10 @@
 
 class Leniador : public Recolector {
 	private:
-
 	public:
 		Leniador();
 		Leniador(CharBlockingQueue* q, BlockingInventory* i);
 		virtual int work() override;
 		~Leniador();
-	
 };
-
 #endif

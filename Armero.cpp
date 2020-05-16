@@ -16,6 +16,8 @@ int Armero::work() {
 		}
 		
 		usleep(60000);
+		std::cout << "";
+
 		points->add(3);
 	}
 	return 0;
