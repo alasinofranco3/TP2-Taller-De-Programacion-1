@@ -4,7 +4,6 @@
 #include "Recolector.h"
 
 class Leniador : public Recolector {
-	private:
 	public:
 		Leniador();
 		Leniador(CharBlockingQueue* q, BlockingInventory* i);

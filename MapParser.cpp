@@ -1,7 +1,7 @@
 #include "MapParser.h"
 #include <string>
 
-MapParser::MapParser(std::string file, CharBlockingQueue* madera, 
+MapParser::MapParser(const std::string file, CharBlockingQueue* madera, 
 		CharBlockingQueue* trigo, CharBlockingQueue* minerales) {
 	fileMap.open(file);
 	this->madera = madera;

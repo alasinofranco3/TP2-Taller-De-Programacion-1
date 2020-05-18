@@ -8,7 +8,6 @@ BlockingInventory::BlockingInventory() {
 	inventory["Trigo"] = 0;
 	inventory["Carbon"] = 0;
 	inventory["Hierro"] = 0;
-	//gatherers = 0;
 }
 
 bool BlockingInventory::has(std::map<std::string, int> *resources) const {
@@ -27,7 +26,7 @@ bool BlockingInventory::has(std::map<std::string, int> *resources) const {
 int BlockingInventory::take(std::map<std::string, int> *neededResources) {
 	std::unique_lock<std::mutex> lk(mutex);
 
-	while (this->has(neededResources) == false) {
+	while (!this->has(neededResources)) {
 		this->shouldClose();
 		if (isClosed) {	
 			return CLOSED;
@@ -59,12 +58,6 @@ void BlockingInventory::shouldClose() {
   		this->close();	
  	}
 	notEmpty.notify_all();		
-
- 	/*
- 	if (gatherers == 0) {
- 		this->close();
- 	}
- 	*/
 }
 
 
@@ -88,18 +81,7 @@ void BlockingInventory::print() {
 }
 
 void BlockingInventory::saveState(const bool* state) {
-	//bool* b = (bool*)malloc(sizeof(bool*));
-	//*b = state;
 	gatherersStates.push_back(state);
 }
 
-/*
-void BlockingInventory::addGatherer() {
-	gatherers ++;
-}
-
-void BlockingInventory::destroyGatherer() {
-	gatherers --;
-}
-*/
 BlockingInventory::~BlockingInventory() {}

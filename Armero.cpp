@@ -8,12 +8,9 @@ Armero::Armero(ProtectedCounter* p, BlockingInventory* i) : Productor(p, i) {
 int Armero::run() {
 	int result = 0;
 	while (result != CLOSED) {
-		//inventory->shouldClose();
 		result = inventory->take(&neededResources);
 		if (result == CLOSED) {
 			return CLOSED;
-			//VER COMO CERRAR EL CONTADOR DE PUNTOS
-			//ver que hacer
 		}
 		
 		usleep(60000);

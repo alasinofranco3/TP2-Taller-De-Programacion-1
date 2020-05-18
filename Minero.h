@@ -4,7 +4,6 @@
 #include "Recolector.h"
 
 class Minero : public Recolector {
-	private:
 	public:
 		Minero();
 		Minero(CharBlockingQueue* q, BlockingInventory* i);

@@ -13,8 +13,8 @@ class Recolector : public Thread {
 	public:
 		Recolector();
 		Recolector(CharBlockingQueue* q, BlockingInventory* i);
-		//virtual void run() override;
-		//virtual int work() = 0;
+	
+		//Devuelve una referencia al atributo finished del recolector
 		const bool* getState() const;
 		virtual ~Recolector();
 };

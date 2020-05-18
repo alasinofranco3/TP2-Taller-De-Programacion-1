@@ -20,7 +20,7 @@ class CharBlockingQueue {
 		~CharBlockingQueue();
 		unsigned int size() const;
 		char pop();
-		void push(char c);
+		void push(const char c);
 		void close();
 };
 

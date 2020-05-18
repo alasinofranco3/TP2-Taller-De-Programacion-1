@@ -4,7 +4,6 @@
 #include "Recolector.h"
 
 class Agricultor : public Recolector {
-	private:
 	public:
 		Agricultor();
 		Agricultor(CharBlockingQueue* q, BlockingInventory* i);

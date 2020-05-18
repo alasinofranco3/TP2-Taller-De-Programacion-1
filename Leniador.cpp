@@ -9,10 +9,7 @@ int Leniador::run() {
 		result = queue->pop();
 		if (result == CLOSED) {
 			finished = true;
-			//inventory->destroyGatherer();
 			return CLOSED;
-			//VER COMO CERRAR EL INVENTARIO
-			//ver que hacer
 		} 
 
 		usleep(50000);

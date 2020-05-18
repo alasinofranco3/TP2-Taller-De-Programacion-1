@@ -18,7 +18,7 @@ char CharBlockingQueue::pop() {
 	return result;
 }
 
-void CharBlockingQueue::push(char c) {
+void CharBlockingQueue::push(const char c) {
 	std::unique_lock<std::mutex> lk(mutex);	
 	queue.push(c);
 	notEmpty.notify_all();

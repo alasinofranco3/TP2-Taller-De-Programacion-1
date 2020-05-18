@@ -9,7 +9,6 @@ int Agricultor::run() {
 		result = queue->pop();
 		if (result == CLOSED) {
 			finished = true;
-			//inventory->destroyGatherer();
 			return CLOSED;
 		} 
 		usleep(50000);

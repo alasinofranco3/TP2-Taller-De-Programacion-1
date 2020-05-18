@@ -11,12 +11,12 @@ class Productor : public Thread {
 	protected:
 		ProtectedCounter* points;
 		BlockingInventory* inventory;
+		//En este mapa se guardan los recursos que necesita cada productor
+		//para trabajar
 		std::map<std::string, int> neededResources;
 	public:
 		Productor();
 		Productor(ProtectedCounter* p, BlockingInventory* i);
-		//virtual void run() override;
-		//virtual int work() = 0;
 		virtual ~Productor();	
 };
 

@@ -25,8 +25,8 @@ class WorkersParser {
 		ProtectedCounter* counter;
 		std::vector<Thread*> *threads;
 
-		Thread* createWorker(std::string type);
-		int runThreads(std::string type, int amount);
+		Thread* createWorker(const std::string type);
+		int runThreads(const std::string type, const int amount);
 
 	public:
 		WorkersParser();
@@ -34,7 +34,8 @@ class WorkersParser {
 		WorkersParser(std::string fileName, CharBlockingQueue* tri, 
 		CharBlockingQueue* mad, CharBlockingQueue* min, BlockingInventory* i, 
 		ProtectedCounter* c, std::vector<Thread*> *threads);
-
+		//Se ocupa de ir leyendo el archivo de trabajadores y a su vez va 
+		//creandolos y lanzando los threads
 		int parse();
 		~WorkersParser();	
 };

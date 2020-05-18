@@ -9,12 +9,9 @@ Carpintero::Carpintero(ProtectedCounter* p,
 int Carpintero::run() {
 	int result = 0;
 	while (result != CLOSED) {
-		//inventory->shouldClose();
 		result = inventory->take(&neededResources);
 		if (result == CLOSED) {
 			return CLOSED;
-			//VER COMO CERRAR EL CONTADOR DE PUNTOS
-			//ver que hacer
 		}
 		
 		usleep(60000);

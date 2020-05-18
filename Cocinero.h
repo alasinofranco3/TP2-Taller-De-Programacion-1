@@ -4,7 +4,6 @@
 #include "Productor.h"
 
 class Cocinero : public Productor {
-	private:
 	public:
 		Cocinero();
 		Cocinero(ProtectedCounter* p, BlockingInventory* i);

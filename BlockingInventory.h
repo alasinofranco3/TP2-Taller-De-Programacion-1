@@ -18,21 +18,25 @@ class BlockingInventory {
 		std::map<std::string, int> inventory;
 		std::mutex mutex;
 		std::condition_variable notEmpty;
-		bool has(std::map<std::string, int> *resources) const;
-		
 		std::vector<const bool*> gatherersStates;
-		//int gatherers;
+		
+		/*Indica si la cantidad de recursos del mapa pasado por parametro
+		esta disponible en el inventario*/
+		bool has(std::map<std::string, int> *resources) const;
+
 	public:
 		BlockingInventory();
 		~BlockingInventory();
 		void add(const std::string resource);
 		int take(std::map<std::string, int> *neededResources);
 		void close();
+		//Imprime los recursos del inventario
 		void print();
-
+		/*Guarda en gatherersStates el bool* recibido, que representa 
+		si un recolector termino o no su trabajo*/
 		void saveState(const bool* state);
-		//void addGatherer();
-		//void destroyGatherer();
+		/*Verifica si se debe cerrar el inventario.En caso afirmativo
+		lo cierra*/
 		void shouldClose();
 };
 

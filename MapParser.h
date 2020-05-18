@@ -17,10 +17,11 @@ class MapParser {
 
 	public:
 		MapParser();
-		MapParser(std::string file, CharBlockingQueue* madera, 
+		MapParser(const std::string file, CharBlockingQueue* madera, 
 			CharBlockingQueue* trigo, CharBlockingQueue* minerales);
-		int parse();
-		
 		~MapParser();
+		//Se ocupa de parsear el mapa e ir llenando las colas de recursos
+		//Una vez finalizado el archivo ,cierra las colas.
+		int parse();
 };
 #endif

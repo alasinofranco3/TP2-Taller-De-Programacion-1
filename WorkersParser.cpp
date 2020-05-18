@@ -39,7 +39,7 @@ int WorkersParser::parse() {
 	return 0;
 }
 
-int WorkersParser::runThreads(std::string type, int amount) {
+int WorkersParser::runThreads(const std::string type, const int amount) {
 	for (int i = 0; i < amount; i++) {
 		Thread *t = this->createWorker(type);
 		if (t == NULL) {
@@ -54,22 +54,25 @@ int WorkersParser::runThreads(std::string type, int amount) {
 	return 0;
 }
 
-Thread* WorkersParser::createWorker(std::string type) {
+Thread* WorkersParser::createWorker(const std::string type) {
 	Recolector* r;
 	if (type == "Agricultores") {
 		r = new Agricultor(trigo, inventory);
+		//Se agrega al inventario la referencia al estado que representa si 
+		//este recolector termino o no su tarea
 		inventory->saveState(r->getState());
-		//inventory->addGatherer();
 		return r;  			
 	} else if (type == "Leniadores") {
 		r = new Leniador(madera, inventory);
+		//Se agrega al inventario la referencia al estado que representa si 
+		//este recolector termino o no su tarea
 		inventory->saveState(r->getState());
-		//inventory->addGatherer();
 		return r;  	
 	} else if (type == "Mineros") {
 		r = new Minero(minerales, inventory);
+		//Se agrega al inventario la referencia al estado que representa si 
+		//este recolector termino o no su tarea
 		inventory->saveState(r->getState());
-		//inventory->addGatherer();
 		return r;  
 	} else if (type == "Cocineros") {
 		return new Cocinero(counter, inventory);
