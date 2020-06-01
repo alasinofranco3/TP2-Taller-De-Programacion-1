@@ -5,13 +5,17 @@
 WorkersParser::WorkersParser(std::string fileName, CharBlockingQueue* tri, 
 	CharBlockingQueue* mad, CharBlockingQueue* min, BlockingInventory* i, 
 	ProtectedCounter* c, std::vector<Thread*> *threads) {
-	file.open(fileName);
 	madera = mad;
 	minerales = min;
 	trigo = tri;
 	inventory = i;
 	counter = c;
 	this->threads = threads;
+	file.open(fileName);
+	if (!(this->file.good())) {
+		std::cout << "Error al abrir el archivo de trabajadores\n";
+		throw std::exception();
+	}
 }
 
 
@@ -19,12 +23,12 @@ int WorkersParser::parse() {
 	std::string line, type;
 	std::size_t equalsOpPos;
 	int amount;
-
+/*
 	if (!(this->file.good())) {
 		std::cout << "Error al abrir el archivo del mapa\n";
 		return ERROR;
 	}
-
+*/
 	while (std::getline(file, line)) {
 		int status;
 		equalsOpPos = line.find("=", 0);	  

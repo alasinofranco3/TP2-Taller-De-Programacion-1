@@ -23,13 +23,12 @@ class BlockingInventory {
 		/*Indica si la cantidad de recursos del mapa pasado por parametro
 		esta disponible en el inventario*/
 		bool has(std::map<std::string, int> *resources) const;
-
+		//void close();
 	public:
 		BlockingInventory();
 		~BlockingInventory();
 		void add(const std::string resource);
 		int take(std::map<std::string, int> *neededResources);
-		void close();
 		//Imprime los recursos del inventario
 		void print();
 		/*Guarda en gatherersStates el bool* recibido, que representa 

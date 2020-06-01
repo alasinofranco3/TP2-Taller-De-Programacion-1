@@ -55,16 +55,16 @@ void BlockingInventory::shouldClose() {
     }
 
   	if (b == true) {
-  		this->close();	
+  		isClosed = true;
  	}
 	notEmpty.notify_all();		
 }
 
-
+/*
 void BlockingInventory::close() {	
 	isClosed = true;
 }
-
+*/
 void BlockingInventory::add(const std::string resource) {
 	std::unique_lock<std::mutex> lk(mutex);	
 	inventory.at(resource) ++;

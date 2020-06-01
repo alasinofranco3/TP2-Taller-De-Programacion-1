@@ -8,8 +8,8 @@ Recolector::Recolector(CharBlockingQueue* q, BlockingInventory* i) {
 	finished = false;
 }
 
-const bool* Recolector::getState() const{
-	return &finished;
+const bool& Recolector::getState() const{
+	return finished;
 }
 
 Recolector::~Recolector() {}

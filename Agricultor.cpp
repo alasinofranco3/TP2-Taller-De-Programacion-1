@@ -5,8 +5,9 @@ Agricultor::Agricultor(CharBlockingQueue* q,
 
 int Agricultor::run() {
 	char result = 0;
+	char poppedElement;
 	while (result != CLOSED) {
-		result = queue->pop();
+		result = queue->pop(&poppedElement);
 		if (result == CLOSED) {
 			finished = true;
 			return CLOSED;

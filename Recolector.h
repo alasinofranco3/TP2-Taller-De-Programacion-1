@@ -15,7 +15,7 @@ class Recolector : public Thread {
 		Recolector(CharBlockingQueue* q, BlockingInventory* i);
 	
 		//Devuelve una referencia al atributo finished del recolector
-		const bool* getState() const;
+		const bool& getState() const;
 		virtual ~Recolector();
 };
 

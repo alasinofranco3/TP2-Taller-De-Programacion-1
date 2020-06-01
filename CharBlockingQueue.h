@@ -18,8 +18,8 @@ class CharBlockingQueue {
 	public:
 		CharBlockingQueue();
 		~CharBlockingQueue();
-		unsigned int size() const;
-		char pop();
+		//char pop();
+		int pop(char* result);
 		void push(const char c);
 		void close();
 };

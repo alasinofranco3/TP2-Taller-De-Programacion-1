@@ -3,20 +3,24 @@
 
 MapParser::MapParser(const std::string file, CharBlockingQueue* madera, 
 		CharBlockingQueue* trigo, CharBlockingQueue* minerales) {
-	fileMap.open(file);
 	this->madera = madera;
 	this->trigo = trigo;
 	this->minerales = minerales;
+	fileMap.open(file);
+	if (!(this->fileMap.good())) {
+		std::cout << "Error al abrir el archivo del mapa\n";
+		throw std::exception();
+	}
 }
 
 int MapParser::parse() {
 	char c;
-
+/*
 	if (!(this->fileMap.good())) {
 		std::cout << "Error al abrir el archivo del mapa\n";
 		return ERROR;
 	}
-
+*/
 	while (fileMap.get(c)) {
 		if (c == 'T') {
 			trigo->push(c);

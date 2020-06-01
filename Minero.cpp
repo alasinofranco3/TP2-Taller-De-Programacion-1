@@ -5,14 +5,15 @@ Minero::Minero(CharBlockingQueue* q,
 
 int Minero::run() {
 	char result = 0;
+	char poppedElement;
 	while (result != CLOSED) {	
-		result = queue->pop();
+		result = queue->pop(&poppedElement);
 		if (result == CLOSED) {
 			finished = true;
 			return CLOSED;
 		} 
 		usleep(50000);
-		if (result == 'H') {
+		if (poppedElement == 'H') {
 			inventory->add("Hierro");
 		} else {
 			inventory->add("Carbon");
